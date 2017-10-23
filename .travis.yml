@@ -17,7 +17,7 @@ addons:
       - libboost-regex-dev
 
 install:
-- g++ -lboost_regex -o credit_card_ex credit_card_example.cpp
+- g++ -o credit_card_ex credit_card_example.cpp -lboost_regex
 
 script:
 - ./credit_card_ex
