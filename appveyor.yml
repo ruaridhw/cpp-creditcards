@@ -1,0 +1,18 @@
+environment:
+  global:
+    GCC_PATH: mingw_64
+    BOOST_ROOT: C:\Libraries\boost_1_59_0
+    BOOST_LIBRARYDIR: C:\Libraries\boost_1_59_0\lib
+    BOOST_INCLUDEDIR: C:\Libraries\boost_1_59_0\include\boost
+
+install:
+  - cd %BOOST_ROOT%
+  - call bootstrap.bat gcc
+  - .\b2 --toolset=gcc --with-regex
+  - cd %APPVEYOR_BUILD_FOLDER%
+
+build_script:
+  - g++ credit_card_example.cpp -o credit_card_ex.exe -IC:\Libraries\boost_1_59_0 -LC:\Libraries\boost_1_59_0\stage\lib -lboost_regex-mgw63-mt-d-1_59_0
+
+test_script:
+  - credit_card_ex.exe
