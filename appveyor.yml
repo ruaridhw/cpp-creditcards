@@ -7,7 +7,7 @@ environment:
 
 install:
   - cd %BOOST_ROOT%
-  - call bootstrap.bat gcc
+  - call bootstrap.bat mingw
   - .\b2 --toolset=gcc --with-regex
   - cd %APPVEYOR_BUILD_FOLDER%
 
