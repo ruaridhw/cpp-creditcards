@@ -6,6 +6,7 @@ environment:
     BOOST_INCLUDEDIR: C:\Libraries\boost_1_59_0\include\boost
 
 install:
+  - set PATH=C:\MinGW\bin;%PATH%
   - cd %BOOST_ROOT%
   - call bootstrap.bat mingw
   - .\b2 --toolset=gcc --with-regex
