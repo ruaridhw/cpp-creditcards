@@ -13,7 +13,7 @@ install:
   - cd %APPVEYOR_BUILD_FOLDER%
 
 build_script:
-  - g++ credit_card_example.cpp -o credit_card_ex.exe -IC:\Libraries\boost_1_59_0 -LC:\Libraries\boost_1_59_0\stage\lib -lboost_regex-mgw63-mt-d-1_59_0
+  - g++ credit_card_example.cpp -o credit_card_ex.exe -IC:\Libraries\boost_1_59_0 -LC:\Libraries\boost_1_59_0\stage\lib -lboost_regex-mgw53-mt-1_59
 
 test_script:
   - credit_card_ex.exe
